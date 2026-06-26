@@ -66,9 +66,7 @@ def get_weather(city):
 
         if json_data.get("cod") != 200:
             return jsonify({
-                "error": json_data.get(
-                    "message",
-                    "Unable to fetch weather"
+                "error": json_data.get("error":"invalid city"
                 )
             }), 400
 
