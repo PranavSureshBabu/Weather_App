@@ -60,19 +60,17 @@ export default {
       }
 
       catch (error) {
+        if (error.response && error.response.data.error) {
 
-    console.log("FULL ERROR:", error)
+        alert(error.response.data.error)
+        }
+        
+    else {
 
-    if (error.response) {
-        console.log("Status:", error.response.status)
-        console.log("Data:", error.response.data)
-    }
-
-    alert("Request failed. Check console.")
-}
+        alert("Something went wrong. Please try again.")
 
     }
-
+        
   }
 
 }
