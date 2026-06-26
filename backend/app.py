@@ -39,7 +39,7 @@ def get_weather(city):
 
         if location is None:
             return jsonify({
-                "error": "Invalid City"
+                "error": "Invalid City Please Try again"
             }), 404
 
         obj = TimezoneFinder()
@@ -66,7 +66,7 @@ def get_weather(city):
 
         if json_data.get("cod") != 200:
             return jsonify({
-                "error": json_data.get("error","Invalid City"
+                "error": json_data.get("error","Invalid City. Please Try again."
                 )
             }), 400
 
